@@ -5,6 +5,11 @@ The Windows port of pdnsd DNS server.
 
 This is from pdnsd project (http://members.home.nl/p.a.rombouts/pdnsd/index.html).
 
+How it works : 
+   
+   When you send a DNS resolve request via GFW for some host(twitter, facebook, etc), GFW will send a fake DNS result, which arrives to your computer faster than the correct package from the DNS Server (Google DNS, OpenDNS, etc). As a result, you system gets an incorrect host address.
+   Luckily, GFW can only deal with UDP DNS requests, till now. So we can build a DNS cache server, which uses TCP to resolve host names.
+
 Version :1.2.9a
 
 Usage: 
